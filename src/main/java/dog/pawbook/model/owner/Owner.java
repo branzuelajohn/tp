@@ -6,7 +6,9 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.UUID;
 
+import dog.pawbook.model.Identifiable;
 import dog.pawbook.model.tag.Tag;
 
 /**
@@ -15,11 +17,13 @@ import dog.pawbook.model.tag.Tag;
  */
 public class Owner {
 
+
     // Identity fields
     private final Name name;
     private final Phone phone;
     private final Email email;
-
+    private int userID;
+    private static int userIDCounter =  0;
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
@@ -33,6 +37,8 @@ public class Owner {
         this.phone = phone;
         this.email = email;
         this.address = address;
+        userIDCounter++;
+        this.userID = userIDCounter;
         this.tags.addAll(tags);
     }
 
@@ -50,6 +56,10 @@ public class Owner {
 
     public Address getAddress() {
         return address;
+    }
+
+    public int getID() {
+        return userID;
     }
 
     /**
@@ -92,6 +102,7 @@ public class Owner {
                 && otherOwner.getPhone().equals(getPhone())
                 && otherOwner.getEmail().equals(getEmail())
                 && otherOwner.getAddress().equals(getAddress())
+                && String.valueOf(otherOwner.getID()).equals(String.valueOf(getID()))
                 && otherOwner.getTags().equals(getTags());
     }
 
@@ -110,7 +121,9 @@ public class Owner {
                 .append("; Email: ")
                 .append(getEmail())
                 .append("; Address: ")
-                .append(getAddress());
+                .append(getAddress())
+                .append("; ID: ")
+                .append(getID());
 
         Set<Tag> tags = getTags();
         if (!tags.isEmpty()) {
@@ -119,5 +132,17 @@ public class Owner {
         }
         return builder.toString();
     }
+
+   /* @Override
+    public boolean isSameAs(Owner other) {
+        if (other == this) {
+            return true;
+        }
+
+        return other != null
+            && (other.getPhone().equals(getPhone())
+            || other.getEmail().equals(getEmail())
+            || other.getAddress().equals(getAddress()));
+    }*/
 
 }

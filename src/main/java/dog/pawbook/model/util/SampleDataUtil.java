@@ -2,6 +2,7 @@ package dog.pawbook.model.util;
 
 import java.util.Arrays;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import dog.pawbook.model.AddressBook;
