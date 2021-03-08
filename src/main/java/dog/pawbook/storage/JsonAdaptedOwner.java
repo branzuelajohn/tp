@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -29,7 +28,6 @@ class JsonAdaptedOwner {
     private final String phone;
     private final String email;
     private final String address;
-    private final String id;
     private final List<JsonAdaptedTag> tagged = new ArrayList<>();
 
     /**
@@ -37,13 +35,12 @@ class JsonAdaptedOwner {
      */
     @JsonCreator
     public JsonAdaptedOwner(@JsonProperty("name") String name, @JsonProperty("phone") String phone,
-            @JsonProperty("email") String email, @JsonProperty("address") String address, @JsonProperty("id") String id,
+            @JsonProperty("email") String email, @JsonProperty("address") String address,
             @JsonProperty("tagged") List<JsonAdaptedTag> tagged) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.id = id;
         if (tagged != null) {
             this.tagged.addAll(tagged);
         }
@@ -60,7 +57,6 @@ class JsonAdaptedOwner {
         tagged.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
-        id = String.valueOf(source.getID());
     }
 
     /**

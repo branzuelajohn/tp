@@ -6,9 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.UUID;
 
-import dog.pawbook.model.Identifiable;
 import dog.pawbook.model.tag.Tag;
 
 /**
@@ -17,13 +15,12 @@ import dog.pawbook.model.tag.Tag;
  */
 public class Owner {
 
-
     // Identity fields
+    private static int userIDCounter = 0;
     private final Name name;
     private final Phone phone;
     private final Email email;
     private int userID;
-    private static int userIDCounter =  0;
     // Data fields
     private final Address address;
     private final Set<Tag> tags = new HashSet<>();
@@ -132,17 +129,5 @@ public class Owner {
         }
         return builder.toString();
     }
-
-   /* @Override
-    public boolean isSameAs(Owner other) {
-        if (other == this) {
-            return true;
-        }
-
-        return other != null
-            && (other.getPhone().equals(getPhone())
-            || other.getEmail().equals(getEmail())
-            || other.getAddress().equals(getAddress()));
-    }*/
 
 }

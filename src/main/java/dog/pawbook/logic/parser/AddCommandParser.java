@@ -8,7 +8,6 @@ import static dog.pawbook.logic.parser.CliSyntax.PREFIX_PHONE;
 import static dog.pawbook.logic.parser.CliSyntax.PREFIX_TAG;
 
 import java.util.Set;
-import java.util.UUID;
 import java.util.stream.Stream;
 
 import dog.pawbook.logic.commands.AddCommand;
