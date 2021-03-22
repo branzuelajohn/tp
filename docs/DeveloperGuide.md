@@ -22,9 +22,13 @@ times.
 ## **Value Proposition**
 
 In Singapore, dog schools are popular among dog owners. Besides day care, they also provide training,
-grooming and workshops. With many moving parts daily, managing operations  can get overwhelming.
+grooming and workshops. With many moving parts daily, managing operations can get overwhelming.
 PawBook is an all-in-one management system to help dog school managers keep track of attendance, scheduling and services
-and maintain organisation.
+and maintain organisation. At present, there is no such application to help dog school owners to organise and
+manage their dog school currently. This application serves to increase the effectiveness and efficacy of dog schools 
+which in turn allows dog schools and its owners to take in more dogs. This application is necessary to help organise the
+school's system. By increasing the intake of dogs in dog schools, this increases the number of trained dogs in Singapore
+in general which solves the general problem of untrained dogs in Singapore being a nuisance to the public.
 
 
 
