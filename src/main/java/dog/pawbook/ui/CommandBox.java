@@ -39,7 +39,6 @@ public class CommandBox extends UiPart<Region> {
         autoCompletionBinding.setVisibleRowCount(5);
         autoCompletionBinding.setDelay(100);
         AutoCompletePopup<String> popupAutoComplete = autoCompletionBinding.getAutoCompletionPopup();
-        popupAutoComplete.anchorLocation
         popupAutoComplete.setId("popupAutoComplete"); // for styles in the css files
     }
 
