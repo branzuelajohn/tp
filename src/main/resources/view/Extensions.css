@@ -18,3 +18,18 @@
 .tooltip-text {
     -fx-text-fill: white;
 }
+
+#popupAutoComplete .list-cell {
+    -fx-background-color: $background;
+    -fx-text-fill: $foreground;
+    -fx-font-size: 15px;
+}
+
+#popupAutoComplete .list-cell:selected {
+    -fx-background-color: $ce;
+    -fx-text-fill: $c8;
+}
+
+#popupAutoComplete .list-cell:hover {
+    -fx-text-fill: $c8;
+}

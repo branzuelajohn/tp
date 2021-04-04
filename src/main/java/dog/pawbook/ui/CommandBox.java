@@ -1,10 +1,15 @@
 package dog.pawbook.ui;
 
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
+
 import dog.pawbook.logic.commands.CommandResult;
 import dog.pawbook.logic.commands.exceptions.CommandException;
 import dog.pawbook.logic.parser.exceptions.ParseException;
+import impl.org.controlsfx.skin.AutoCompletePopup;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 
 /**
@@ -18,7 +23,7 @@ public class CommandBox extends UiPart<Region> {
     private final CommandExecutor commandExecutor;
 
     @FXML
-    private AutoCompleteTextField commandTextField;
+    private TextField commandTextField;
 
     /**
      * Creates a {@code CommandBox} with the given {@code CommandExecutor}.
@@ -27,8 +32,15 @@ public class CommandBox extends UiPart<Region> {
         super(FXML);
         this.commandExecutor = commandExecutor;
         // calls #setStyleToDefault() whenever there is a change to the text of the command box.
-        commandTextField.getEntries().addAll(CommandSuggestions.getSuggestions());
         commandTextField.textProperty().addListener((unused1, unused2, unused3) -> setStyleToDefault());
+        String[] commandSuggestions = CommandSuggestions.getSuggestions();
+        AutoCompletionBinding<String> autoCompletionBinding = TextFields.bindAutoCompletion(commandTextField,
+            commandSuggestions);
+        autoCompletionBinding.setVisibleRowCount(5);
+        autoCompletionBinding.setDelay(100);
+        AutoCompletePopup<String> popupAutoComplete = autoCompletionBinding.getAutoCompletionPopup();
+        popupAutoComplete.anchorLocation
+        popupAutoComplete.setId("popupAutoComplete"); // for styles in the css files
     }
 
     /**
