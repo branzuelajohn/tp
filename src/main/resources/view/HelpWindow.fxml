@@ -27,7 +27,8 @@
                 <URL value="@PawbookTheme.css" />
                 <URL value="@Extensions.css" />
             </stylesheets>
-            <GridPane prefHeight="380" prefWidth="590.0">
+            <GridPane minHeight="380" maxHeight="600"  minWidth="590.0" maxWidth="614">
+
                 <HBox alignment="BASELINE_RIGHT" GridPane.rowIndex="0">
                     <opaqueInsets>
                         <Insets bottom="10.0" left="8.0" right="12.0" top="5.0" />
@@ -56,7 +57,7 @@
                     <font>
                         <Font size="27.0" />
                     </font></Label>
-                <TableView fx:id="tableView" prefHeight="320.0" prefWidth="590.0" GridPane.rowIndex="3">
+                <TableView fx:id="tableView" minHeight="320.0" prefHeight="350.0" maxHeight="400.0" prefWidth="590.0" GridPane.rowIndex="3">
                     <columns>
                         <TableColumn prefWidth="80.0" text="Action">
                             <cellValueFactory><PropertyValueFactory property="action" />
