@@ -9,9 +9,9 @@ import static java.util.Objects.requireNonNull;
  */
 public class Breed {
 
-    public static final String MESSAGE_CONSTRAINTS = "Breeds should only contain alphanumeric characters and spaces,"
+    public static final String MESSAGE_CONSTRAINTS = "Breeds should only letters and spaces,"
             + " and it should not be blank";
-    public static final String VALIDATION_REGEX = "[\\p{Alnum}][\\p{Alnum} ]*";
+    public static final String VALIDATION_REGEX = "^[a-zA-Z\\\\s]*$";
 
     public final String value;
 
@@ -30,6 +30,9 @@ public class Breed {
      * Returns true if a given string is a valid breed.
      */
     public static boolean isValidBreed(String test) {
+        if (test.equals("")) {
+            return false;
+        }
         return test.matches(VALIDATION_REGEX);
     }
 
