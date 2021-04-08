@@ -6,21 +6,26 @@ import static dog.pawbook.logic.commands.CommandTestUtil.VALID_BREED_ASHER;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_BREED_BELL;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_DATEOFBIRTH_ASHER;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_DATEOFBIRTH_BELL;
+import static dog.pawbook.logic.commands.CommandTestUtil.VALID_DOG_ID_1;
+import static dog.pawbook.logic.commands.CommandTestUtil.VALID_DOG_ID_2;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_EMAIL_AMY;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_EMAIL_BOB;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_NAME_AMY;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_NAME_ASHER;
+import static dog.pawbook.logic.commands.CommandTestUtil.VALID_NAME_BEHAVIOURAL;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_NAME_BELL;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_NAME_BOB;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_OWNERID_15;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_OWNERID_17;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_PHONE_AMY;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_PHONE_BOB;
+import static dog.pawbook.logic.commands.CommandTestUtil.VALID_SESSION_1;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_SEX_ASHER;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_SEX_BELL;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_TAG_FRIEND;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_TAG_FRIENDLY;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_TAG_HUSBAND;
+import static dog.pawbook.logic.commands.CommandTestUtil.VALID_TAG_PUPPIES;
 import static dog.pawbook.logic.commands.CommandTestUtil.VALID_TAG_QUIET;
 
 import java.util.ArrayList;
@@ -73,11 +78,6 @@ public class TypicalEntities {
             .withDateOfBirth("21-08-2018").withBreed("Australian Shepherd").withOwnerID(11).build();
     public static final Dog GENIE = new DogBuilder().withName("Genie").withSex("male")
             .withDateOfBirth("29-05-2020").withBreed("Husky").withOwnerID(13).build();
-    // Programs
-    public static final Program FIRSTPROGRAM = new ProgramBuilder().withName("Basic Obedience Training")
-            .withDogs(1).withTags("puppies").build();
-    public static final Program SECONDPROGRAM = new ProgramBuilder().withName("Basic Behavioural Training")
-            .withDogs(1).withTags("active").withTags("puppies").build();
 
     // Manually added owners
     public static final Owner HOON = new OwnerBuilder().withName("Hoon Meier").withPhone("8482424")
@@ -127,6 +127,10 @@ public class TypicalEntities {
             .withSessions("09-08-2021 09:00").withDogs(6, 8).withTags("Puppies").build();
     public static final Program GENERAL_KNOWLEDGE = new ProgramBuilder().withName("General Knowledge")
             .withSessions("27-08-2021 09:00").withDogs(10, 12, 14).withTags("Puppies").build();
+
+    // Manually added - Dog's details found in {@code CommandTestUtil}
+    public static final Program BEHAVIOURAL = new ProgramBuilder().withName(VALID_NAME_BEHAVIOURAL)
+            .withSessions(VALID_SESSION_1).withDogs(VALID_DOG_ID_1, VALID_DOG_ID_2).withTags(VALID_TAG_PUPPIES).build();
 
     // TODO: manually added dogs
 

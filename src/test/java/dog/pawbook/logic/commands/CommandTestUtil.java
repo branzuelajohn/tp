@@ -65,10 +65,10 @@ public class CommandTestUtil {
     public static final String VALID_TAG_QUIET = "quiet";
     public static final String VALID_ENTITY_ID = "1";
 
-    public static final String VALID_NAME_FIRSTPROGRAM = "Basic Obedience Training";
-    public static final String VALID_NAME_SECONDPROGRAM = "Basic Behavioural Training";
-    public static final String VALID_DOG_ID_1 = "1";
-    public static final String VALID_DOG_ID_2 = "2";
+    public static final String VALID_NAME_OBEDIENCE = "Basic Obedience Training";
+    public static final String VALID_NAME_BEHAVIOURAL = "Basic Behavioural Training";
+    public static final int VALID_DOG_ID_1 = 1;
+    public static final int VALID_DOG_ID_2 = 2;
     public static final String VALID_TAG_PUPPIES = "puppies";
     public static final String VALID_SESSION_1 = "02-02-2020 18:00";
     public static final String VALID_SESSION_2 = "01-01-2020 18:00";
