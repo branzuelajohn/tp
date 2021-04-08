@@ -73,6 +73,12 @@ public class TypicalEntities {
             .withDateOfBirth("21-08-2018").withBreed("Australian Shepherd").withOwnerID(11).build();
     public static final Dog GENIE = new DogBuilder().withName("Genie").withSex("male")
             .withDateOfBirth("29-05-2020").withBreed("Husky").withOwnerID(13).build();
+    // Programs
+    public static final Program FIRSTPROGRAM = new ProgramBuilder().withName("Basic Obedience Training")
+            .withDogs(1).withTags("puppies").build();
+    public static final Program SECONDPROGRAM = new ProgramBuilder().withName("Basic Behavioural Training")
+            .withDogs(1).withTags("active").withTags("puppies").build();
+
     // Manually added owners
     public static final Owner HOON = new OwnerBuilder().withName("Hoon Meier").withPhone("8482424")
             .withEmail("stefan@example.com").withAddress("little india").build();
